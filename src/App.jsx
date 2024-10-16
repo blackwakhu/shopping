@@ -5,6 +5,7 @@ export default function App () {
   const [price, setPrice] = useState(0)
   const [item, setItem] = useState("")
   const [shopList, setShopList] = useState([])
+
   const handleInput = (e) =>  {
     e.preventDefault()
     setShopList(
@@ -12,7 +13,8 @@ export default function App () {
         ...shopList, 
         {
           "item": item,
-          "price": price
+          "price": price,
+          "quantity": 0
         }
       ])
   }
@@ -40,6 +42,7 @@ export default function App () {
             <th></th>
             <th>Item</th>
             <th>Price</th>
+            <th>quantity</th>
           </tr>
         </thead>
         <tbody>
@@ -48,6 +51,7 @@ export default function App () {
               <td>{index} </td>
               <td>{item.item}</td>
               <td>{item.price} </td>
+              <td>{item.quantity}</td>
             </tr>
           ))}
         </tbody>
