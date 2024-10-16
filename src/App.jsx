@@ -7,7 +7,14 @@ export default function App () {
   const [shopList, setShopList] = useState([])
   const handleInput = (e) =>  {
     e.preventDefault()
-    setShopList(shopList.push({"item": item, "price": price}))
+    setShopList(
+      [
+        ...shopList, 
+        {
+          "item": item,
+          "price": price
+        }
+      ])
   }
   return (
     <div>
@@ -28,7 +35,11 @@ export default function App () {
         <input type="submit" value="add" />
       </form>
       <ul>
-        <p>{shopList}</p>
+        {shopList.map((item, index) => (
+          <li key={index}>
+            {item.item} - ${item.price.toFixed(2)} (index: {index})
+          </li>
+        ))}
       </ul>
     </div>
   )
