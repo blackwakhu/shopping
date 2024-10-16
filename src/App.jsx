@@ -13,12 +13,14 @@ export default function App () {
           type="text" 
           name="item"
            id="" 
-           placeholder="Enter the item name"/>
+           placeholder="Enter the item name"
+           onChange={(e) => setItem(e.target.value)}/>
         <input 
           type="number" 
           name="price" 
           id="price"
-          placeholder="Enter the price" />
+          placeholder="Enter the price" 
+          onChange={(e) => setPrice(e.target.value)}/>
         <input type="submit" value="add" />
       </form>
       <ul>
