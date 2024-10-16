@@ -5,10 +5,14 @@ export default function App () {
   const [price, setPrice] = useState(0)
   const [item, setItem] = useState("")
   const [shopList, setShopList] = useState([])
+  const handleInput = (e) =>  {
+    e.preventDefault()
+    setShopList(shopList.push({"item": item, "price": price}))
+  }
   return (
     <div>
       <h1>Hello world</h1>
-      <form action="">
+      <form onSubmit={handleInput}>
         <input 
           type="text" 
           name="item"
