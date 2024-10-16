@@ -34,13 +34,24 @@ export default function App () {
           onChange={(e) => setPrice(e.target.value)}/>
         <input type="submit" value="add" />
       </form>
-      <ul>
-        {shopList.map((item, index) => (
-          <li key={index}>
-            {item.item} - ${item.price.toFixed(2)} (index: {index})
-          </li>
-        ))}
-      </ul>
+      <table>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Item</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          {shopList.map((item, index) => (
+            <tr key={index}>
+              <td>{index} </td>
+              <td>{item.item}</td>
+              <td>{item.price} </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </div>
   )
 }
